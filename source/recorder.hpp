@@ -11,15 +11,14 @@ class Recorder
 	private:
 		sf::SoundBufferRecorder recordingBuffer;
 		sf::SoundBuffer buffer;
-		int16_t* samples;
-		int numSamples;
+		int16_t* b_samples;
+		int n_samples;
 	public:
 		Recorder(void);
-		void initialize(void);
 		void start(void);
 		void stop(void);
 		int getNumSamples(void);
-		int16_t* getSamples(void);
+		int16_t* getBuffer(void);
 };
 
 

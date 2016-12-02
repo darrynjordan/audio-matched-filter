@@ -7,32 +7,36 @@ SpectrumAnalyzer::SpectrumAnalyzer(void)
 }
 
 
-void SpectrumAnalyzer::allocateMemory(int sa_numSamples)
+void SpectrumAnalyzer::init(int num_samples, TaperFunction taperFunction)
 {
-	numSamples = sa_numSamples;
-	signal = (double*)malloc(numSamples*sizeof(double));
-	spectrum = (fftw_complex*)malloc(numSamples*sizeof(fftw_complex));
+	n_samples = num_samples;
+
+	taper.setFunction(taperFunction);
+	taper.generate(n_samples);
+	
+	b_samples = (double*)malloc(n_samples*sizeof(double));
+	b_spectrum = (fftw_complex*)malloc(n_samples*sizeof(fftw_complex));
 }
 
 
-void SpectrumAnalyzer::loadSamples(int16_t* samples)
+void SpectrumAnalyzer::loadBuffer(int16_t* buf_samples)
 {
-	for (int i = 0; i < numSamples; i++)
+	for (int i = 0; i < n_samples; i++)
 	{
-		signal[i] = samples[i];
+		b_samples[i] = buf_samples[i]*taper.getCoefficient(i);
 	}
 }
 
 
 void SpectrumAnalyzer::generateSpectrum(void)
 {
-	fftw_plan spectrumPlan = fftw_plan_dft_r2c_1d(numSamples, signal, spectrum, FFTW_ESTIMATE);
+	fftw_plan spectrumPlan = fftw_plan_dft_r2c_1d(n_samples, b_samples, b_spectrum, FFTW_ESTIMATE);
 	fftw_execute(spectrumPlan);
 }
 
 
 
-void SpectrumAnalyzer::gnuPlot(char const *plotTitle, plotType type, plotStyle style)
+void SpectrumAnalyzer::plotSpectrum(char const *plotTitle, plotType type, plotStyle style)
 {
 	FILE *pipe_gp = popen("gnuplot", "w");	
 
@@ -68,9 +72,9 @@ void SpectrumAnalyzer::gnuPlot(char const *plotTitle, plotType type, plotStyle s
 				case AMPLITUDE: 
 				{
 					fputs("plot '-' using 1:2 with lines notitle\n", pipe_gp);
-					for (int i = 0; i < numSamples; i++) 
+					for (int i = 0; i < n_samples; i++) 
 					{
-						float magnitude = sqrt(pow(spectrum[i][0], 2) + pow(spectrum[i][1], 2));							
+						float magnitude = sqrt(pow(b_spectrum[i][0], 2) + pow(b_spectrum[i][1], 2));							
 						fprintf(pipe_gp, "%i %f\n", i, magnitude);
 					}
 					break;
@@ -80,16 +84,16 @@ void SpectrumAnalyzer::gnuPlot(char const *plotTitle, plotType type, plotStyle s
 				{
 					fputs("plot '-' title 'I Samples' with lines, '-' title 'Q Samples' with lines\n", pipe_gp);
 					
-					for (int i = 0; i < numSamples; i++) 
+					for (int i = 0; i < n_samples; i++) 
 					{
-						fprintf(pipe_gp, "%i %f\n", i, spectrum[i][0]);
+						fprintf(pipe_gp, "%i %f\n", i, b_spectrum[i][0]);
 					}
 					fflush(pipe_gp);
 					fprintf(pipe_gp, "e\n");						
 
-					for (int i = 0; i < numSamples; i++) 
+					for (int i = 0; i < n_samples; i++) 
 					{
-						fprintf(pipe_gp, "%i %f\n", i, spectrum[i][1]);
+						fprintf(pipe_gp, "%i %f\n", i, b_spectrum[i][1]);
 					}
 					break;
 				}										
@@ -100,17 +104,17 @@ void SpectrumAnalyzer::gnuPlot(char const *plotTitle, plotType type, plotStyle s
 		case FFT_SHIFT:
 		{
 			fputs("plot '-' using 1:2 with lines notitle\n", pipe_gp);
-			for (int i = 0; i < numSamples; i++) 
+			for (int i = 0; i < n_samples; i++) 
 			{
-				if (i < (numSamples/2 + 1))
+				if (i < (n_samples/2 + 1))
 				{
-					fprintf(pipe_gp, "%i %f\n", i, ((sqrt(spectrum[i + (numSamples/2 - 1)][0]*spectrum[i + (numSamples/2 - 1)][0] +
-															 spectrum[i + (numSamples/2 - 1)][1]*spectrum[i + (numSamples/2 - 1)][1]))));
+					fprintf(pipe_gp, "%i %f\n", i, ((sqrt(b_spectrum[i + (n_samples/2 - 1)][0]*b_spectrum[i + (n_samples/2 - 1)][0] +
+															 b_spectrum[i + (n_samples/2 - 1)][1]*b_spectrum[i + (n_samples/2 - 1)][1]))));
 				}
 				else
 				{
-					fprintf(pipe_gp, "%i %f\n", i, ((sqrt(spectrum[i - (numSamples/2 + 1)][0]*spectrum[i - (numSamples/2 + 1)][0] + 
-															 spectrum[i - (numSamples/2 + 1)][1]*spectrum[i - (numSamples/2 + 1)][1]))));
+					fprintf(pipe_gp, "%i %f\n", i, ((sqrt(b_spectrum[i - (n_samples/2 + 1)][0]*b_spectrum[i - (n_samples/2 + 1)][0] + 
+															 b_spectrum[i - (n_samples/2 + 1)][1]*b_spectrum[i - (n_samples/2 + 1)][1]))));
 				}
 			}
 			break;	

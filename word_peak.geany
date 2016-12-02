@@ -13,8 +13,8 @@ detect_indent_width=false
 indent_mode=2
 
 [project]
-name=PCSonar
-base_path=/home/darryn/Dropbox/Workspace/PCSonar
+name=word_peak
+base_path=/home/darryn/Git/word_peak
 description=
 file_patterns=
 
@@ -26,15 +26,9 @@ long_line_column=72
 current_page=0
 
 [VTE]
-last_dir=/media/Storage/Projects/pc_sonar/build
+last_dir=/home/darryn
 
 [build-menu]
-NF_00_LB=_Make
-NF_00_CM=make -j4
-NF_00_WD=/home/darryn/Dropbox/Workspace/PCSonar/build
-EX_00_LB=_Execute
-EX_00_CM=./PCSonar
-EX_00_WD=/home/darryn/Dropbox/Workspace/PCSonar/build
 
 [editor]
 line_wrapping=false

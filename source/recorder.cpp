@@ -3,47 +3,40 @@
 
 Recorder::Recorder(void)
 {
-	initialize();
-}
-
-
-void Recorder::initialize(void)
-{
 	if (!sf::SoundBufferRecorder::isAvailable())
 	{
 		cout << "error: audio capture is not available on this system" << endl;
 	}
 }
 
-
 void Recorder::start(void)
 {
 	recordingBuffer.start();
-	cout << "Recording started..." << endl;
+	cout << "Recording started." << endl;
 }
 
 
 void Recorder::stop(void)
 {
 	recordingBuffer.stop();
-	cout << "Recording stopped!" << endl;
+	cout << "Recording stopped." << endl;
 	
 	buffer = recordingBuffer.getBuffer();
-	numSamples = buffer.getSampleCount();
-	samples = (int16_t*)buffer.getSamples();
+	n_samples = buffer.getSampleCount();
+	b_samples = (int16_t*)buffer.getSamples();
 	buffer.saveToFile("received_signal.ogg");	
 }
 
 
 int Recorder::getNumSamples(void)
 {
-	return numSamples;
+	return n_samples;
 }
 
 
-int16_t* Recorder::getSamples(void)
+int16_t* Recorder::getBuffer(void)
 {
-	return samples;
+	return b_samples;
 }
 
 
