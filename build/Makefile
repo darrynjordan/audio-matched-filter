@@ -150,6 +150,33 @@ source/main.cpp.s:
 	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/main.cpp.s
 .PHONY : source/main.cpp.s
 
+source/plot.o: source/plot.cpp.o
+
+.PHONY : source/plot.o
+
+# target to build an object file
+source/plot.cpp.o:
+	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/plot.cpp.o
+.PHONY : source/plot.cpp.o
+
+source/plot.i: source/plot.cpp.i
+
+.PHONY : source/plot.i
+
+# target to preprocess a source file
+source/plot.cpp.i:
+	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/plot.cpp.i
+.PHONY : source/plot.cpp.i
+
+source/plot.s: source/plot.cpp.s
+
+.PHONY : source/plot.s
+
+# target to generate assembly for a file
+source/plot.cpp.s:
+	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/plot.cpp.s
+.PHONY : source/plot.cpp.s
+
 source/recorder.o: source/recorder.cpp.o
 
 .PHONY : source/recorder.o
@@ -270,6 +297,9 @@ help:
 	@echo "... source/main.o"
 	@echo "... source/main.i"
 	@echo "... source/main.s"
+	@echo "... source/plot.o"
+	@echo "... source/plot.i"
+	@echo "... source/plot.s"
 	@echo "... source/recorder.o"
 	@echo "... source/recorder.i"
 	@echo "... source/recorder.s"

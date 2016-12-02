@@ -8,11 +8,7 @@
 #include <math.h>
 #include <SFML/Audio.hpp>
 #include "taper.hpp"
-
-using namespace std;
-
-enum plotType {NORMAL, FFT_SHIFT};
-enum plotStyle {AMPLITUDE, IQ};
+#include "plot.hpp"
 
 class SpectrumAnalyzer
 {
@@ -23,14 +19,13 @@ class SpectrumAnalyzer
 		int n_samples;
 		fftw_plan spectrumPlan;		
 		Taper taper;
+		GNUPlot<double_t> p_word_time;
 	
 	public: 
 		SpectrumAnalyzer(void);
 		void init(int num_samples, TaperFunction taperFunction);
 		void generateSpectrum(void);
 		void loadBuffer(int16_t* buf_samples);
-		void plotSpectrum(char const *plotTitle, plotType type = FFT_SHIFT, plotStyle style = AMPLITUDE);	
-		void plotBuffer(char const *plotTitle);
 };
 
 #endif

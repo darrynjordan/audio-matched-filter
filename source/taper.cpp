@@ -1,6 +1,5 @@
 #include "taper.hpp"
 
-
 Taper::Taper(void)
 {
 	
