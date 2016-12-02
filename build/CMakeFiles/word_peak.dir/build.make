@@ -81,33 +81,9 @@ CMakeFiles/word_peak.dir/source/main.cpp.o.provides: CMakeFiles/word_peak.dir/so
 CMakeFiles/word_peak.dir/source/main.cpp.o.provides.build: CMakeFiles/word_peak.dir/source/main.cpp.o
 
 
-CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.o: CMakeFiles/word_peak.dir/flags.make
-CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.o: ../source/spectrum_analyzer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/darryn/Git/word_peak/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.o -c /home/darryn/Git/word_peak/source/spectrum_analyzer.cpp
-
-CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/darryn/Git/word_peak/source/spectrum_analyzer.cpp > CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.i
-
-CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/darryn/Git/word_peak/source/spectrum_analyzer.cpp -o CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.s
-
-CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.o.requires:
-
-.PHONY : CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.o.requires
-
-CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.o.provides: CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.o.requires
-	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.o.provides.build
-.PHONY : CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.o.provides
-
-CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.o.provides.build: CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.o
-
-
 CMakeFiles/word_peak.dir/source/signal_generator.cpp.o: CMakeFiles/word_peak.dir/flags.make
 CMakeFiles/word_peak.dir/source/signal_generator.cpp.o: ../source/signal_generator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/darryn/Git/word_peak/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/word_peak.dir/source/signal_generator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/darryn/Git/word_peak/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/word_peak.dir/source/signal_generator.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/word_peak.dir/source/signal_generator.cpp.o -c /home/darryn/Git/word_peak/source/signal_generator.cpp
 
 CMakeFiles/word_peak.dir/source/signal_generator.cpp.i: cmake_force
@@ -131,7 +107,7 @@ CMakeFiles/word_peak.dir/source/signal_generator.cpp.o.provides.build: CMakeFile
 
 CMakeFiles/word_peak.dir/source/recorder.cpp.o: CMakeFiles/word_peak.dir/flags.make
 CMakeFiles/word_peak.dir/source/recorder.cpp.o: ../source/recorder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/darryn/Git/word_peak/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/word_peak.dir/source/recorder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/darryn/Git/word_peak/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/word_peak.dir/source/recorder.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/word_peak.dir/source/recorder.cpp.o -c /home/darryn/Git/word_peak/source/recorder.cpp
 
 CMakeFiles/word_peak.dir/source/recorder.cpp.i: cmake_force
@@ -155,7 +131,7 @@ CMakeFiles/word_peak.dir/source/recorder.cpp.o.provides.build: CMakeFiles/word_p
 
 CMakeFiles/word_peak.dir/source/taper.cpp.o: CMakeFiles/word_peak.dir/flags.make
 CMakeFiles/word_peak.dir/source/taper.cpp.o: ../source/taper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/darryn/Git/word_peak/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/word_peak.dir/source/taper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/darryn/Git/word_peak/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/word_peak.dir/source/taper.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/word_peak.dir/source/taper.cpp.o -c /home/darryn/Git/word_peak/source/taper.cpp
 
 CMakeFiles/word_peak.dir/source/taper.cpp.i: cmake_force
@@ -175,6 +151,30 @@ CMakeFiles/word_peak.dir/source/taper.cpp.o.provides: CMakeFiles/word_peak.dir/s
 .PHONY : CMakeFiles/word_peak.dir/source/taper.cpp.o.provides
 
 CMakeFiles/word_peak.dir/source/taper.cpp.o.provides.build: CMakeFiles/word_peak.dir/source/taper.cpp.o
+
+
+CMakeFiles/word_peak.dir/source/transformer.cpp.o: CMakeFiles/word_peak.dir/flags.make
+CMakeFiles/word_peak.dir/source/transformer.cpp.o: ../source/transformer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/darryn/Git/word_peak/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/word_peak.dir/source/transformer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/word_peak.dir/source/transformer.cpp.o -c /home/darryn/Git/word_peak/source/transformer.cpp
+
+CMakeFiles/word_peak.dir/source/transformer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/word_peak.dir/source/transformer.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/darryn/Git/word_peak/source/transformer.cpp > CMakeFiles/word_peak.dir/source/transformer.cpp.i
+
+CMakeFiles/word_peak.dir/source/transformer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/word_peak.dir/source/transformer.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/darryn/Git/word_peak/source/transformer.cpp -o CMakeFiles/word_peak.dir/source/transformer.cpp.s
+
+CMakeFiles/word_peak.dir/source/transformer.cpp.o.requires:
+
+.PHONY : CMakeFiles/word_peak.dir/source/transformer.cpp.o.requires
+
+CMakeFiles/word_peak.dir/source/transformer.cpp.o.provides: CMakeFiles/word_peak.dir/source/transformer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/transformer.cpp.o.provides.build
+.PHONY : CMakeFiles/word_peak.dir/source/transformer.cpp.o.provides
+
+CMakeFiles/word_peak.dir/source/transformer.cpp.o.provides.build: CMakeFiles/word_peak.dir/source/transformer.cpp.o
 
 
 CMakeFiles/word_peak.dir/source/plot.cpp.o: CMakeFiles/word_peak.dir/flags.make
@@ -204,20 +204,20 @@ CMakeFiles/word_peak.dir/source/plot.cpp.o.provides.build: CMakeFiles/word_peak.
 # Object files for target word_peak
 word_peak_OBJECTS = \
 "CMakeFiles/word_peak.dir/source/main.cpp.o" \
-"CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.o" \
 "CMakeFiles/word_peak.dir/source/signal_generator.cpp.o" \
 "CMakeFiles/word_peak.dir/source/recorder.cpp.o" \
 "CMakeFiles/word_peak.dir/source/taper.cpp.o" \
+"CMakeFiles/word_peak.dir/source/transformer.cpp.o" \
 "CMakeFiles/word_peak.dir/source/plot.cpp.o"
 
 # External object files for target word_peak
 word_peak_EXTERNAL_OBJECTS =
 
 word_peak: CMakeFiles/word_peak.dir/source/main.cpp.o
-word_peak: CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.o
 word_peak: CMakeFiles/word_peak.dir/source/signal_generator.cpp.o
 word_peak: CMakeFiles/word_peak.dir/source/recorder.cpp.o
 word_peak: CMakeFiles/word_peak.dir/source/taper.cpp.o
+word_peak: CMakeFiles/word_peak.dir/source/transformer.cpp.o
 word_peak: CMakeFiles/word_peak.dir/source/plot.cpp.o
 word_peak: CMakeFiles/word_peak.dir/build.make
 word_peak: /usr/lib/x86_64-linux-gnu/libfftw3.so
@@ -231,10 +231,10 @@ CMakeFiles/word_peak.dir/build: word_peak
 .PHONY : CMakeFiles/word_peak.dir/build
 
 CMakeFiles/word_peak.dir/requires: CMakeFiles/word_peak.dir/source/main.cpp.o.requires
-CMakeFiles/word_peak.dir/requires: CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.o.requires
 CMakeFiles/word_peak.dir/requires: CMakeFiles/word_peak.dir/source/signal_generator.cpp.o.requires
 CMakeFiles/word_peak.dir/requires: CMakeFiles/word_peak.dir/source/recorder.cpp.o.requires
 CMakeFiles/word_peak.dir/requires: CMakeFiles/word_peak.dir/source/taper.cpp.o.requires
+CMakeFiles/word_peak.dir/requires: CMakeFiles/word_peak.dir/source/transformer.cpp.o.requires
 CMakeFiles/word_peak.dir/requires: CMakeFiles/word_peak.dir/source/plot.cpp.o.requires
 
 .PHONY : CMakeFiles/word_peak.dir/requires

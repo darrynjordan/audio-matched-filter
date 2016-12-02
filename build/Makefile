@@ -231,33 +231,6 @@ source/signal_generator.cpp.s:
 	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/signal_generator.cpp.s
 .PHONY : source/signal_generator.cpp.s
 
-source/spectrum_analyzer.o: source/spectrum_analyzer.cpp.o
-
-.PHONY : source/spectrum_analyzer.o
-
-# target to build an object file
-source/spectrum_analyzer.cpp.o:
-	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.o
-.PHONY : source/spectrum_analyzer.cpp.o
-
-source/spectrum_analyzer.i: source/spectrum_analyzer.cpp.i
-
-.PHONY : source/spectrum_analyzer.i
-
-# target to preprocess a source file
-source/spectrum_analyzer.cpp.i:
-	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.i
-.PHONY : source/spectrum_analyzer.cpp.i
-
-source/spectrum_analyzer.s: source/spectrum_analyzer.cpp.s
-
-.PHONY : source/spectrum_analyzer.s
-
-# target to generate assembly for a file
-source/spectrum_analyzer.cpp.s:
-	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.s
-.PHONY : source/spectrum_analyzer.cpp.s
-
 source/taper.o: source/taper.cpp.o
 
 .PHONY : source/taper.o
@@ -285,6 +258,33 @@ source/taper.cpp.s:
 	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/taper.cpp.s
 .PHONY : source/taper.cpp.s
 
+source/transformer.o: source/transformer.cpp.o
+
+.PHONY : source/transformer.o
+
+# target to build an object file
+source/transformer.cpp.o:
+	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/transformer.cpp.o
+.PHONY : source/transformer.cpp.o
+
+source/transformer.i: source/transformer.cpp.i
+
+.PHONY : source/transformer.i
+
+# target to preprocess a source file
+source/transformer.cpp.i:
+	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/transformer.cpp.i
+.PHONY : source/transformer.cpp.i
+
+source/transformer.s: source/transformer.cpp.s
+
+.PHONY : source/transformer.s
+
+# target to generate assembly for a file
+source/transformer.cpp.s:
+	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/transformer.cpp.s
+.PHONY : source/transformer.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -306,12 +306,12 @@ help:
 	@echo "... source/signal_generator.o"
 	@echo "... source/signal_generator.i"
 	@echo "... source/signal_generator.s"
-	@echo "... source/spectrum_analyzer.o"
-	@echo "... source/spectrum_analyzer.i"
-	@echo "... source/spectrum_analyzer.s"
 	@echo "... source/taper.o"
 	@echo "... source/taper.i"
 	@echo "... source/taper.s"
+	@echo "... source/transformer.o"
+	@echo "... source/transformer.i"
+	@echo "... source/transformer.s"
 .PHONY : help
 
 

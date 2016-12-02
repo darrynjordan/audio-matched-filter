@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/darryn/Git/word_peak/source/plot.cpp" "/home/darryn/Git/word_peak/build/CMakeFiles/word_peak.dir/source/plot.cpp.o"
   "/home/darryn/Git/word_peak/source/recorder.cpp" "/home/darryn/Git/word_peak/build/CMakeFiles/word_peak.dir/source/recorder.cpp.o"
   "/home/darryn/Git/word_peak/source/signal_generator.cpp" "/home/darryn/Git/word_peak/build/CMakeFiles/word_peak.dir/source/signal_generator.cpp.o"
-  "/home/darryn/Git/word_peak/source/spectrum_analyzer.cpp" "/home/darryn/Git/word_peak/build/CMakeFiles/word_peak.dir/source/spectrum_analyzer.cpp.o"
   "/home/darryn/Git/word_peak/source/taper.cpp" "/home/darryn/Git/word_peak/build/CMakeFiles/word_peak.dir/source/taper.cpp.o"
+  "/home/darryn/Git/word_peak/source/transformer.cpp" "/home/darryn/Git/word_peak/build/CMakeFiles/word_peak.dir/source/transformer.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -13,12 +13,15 @@ class Recorder
 		sf::SoundBuffer buffer;
 		int16_t* b_samples;
 		int n_samples;
+		bool is_save;
+		
 	public:
 		Recorder(void);
 		void start(void);
 		void stop(void);
 		int getNumSamples(void);
 		int16_t* getBuffer(void);
+		void setSave(bool Save){is_save = Save;}
 };
 
 

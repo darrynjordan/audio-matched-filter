@@ -24,7 +24,12 @@ void Recorder::stop(void)
 	buffer = recordingBuffer.getBuffer();
 	n_samples = buffer.getSampleCount();
 	b_samples = (int16_t*)buffer.getSamples();
-	buffer.saveToFile("received_signal.ogg");	
+	
+	if (is_save)
+	{
+		buffer.saveToFile("recorded_signal.ogg");
+		cout << "Saved: recorded_signal.ogg" << endl;
+	}	
 }
 
 

@@ -4,7 +4,7 @@
 #include <iostream>
 #include <math.h>
 
-enum TaperFunction{HANNING, HAMMING, UNIFORM, BLACKMAN};
+enum TaperFunction {HANNING, HAMMING, UNIFORM, BLACKMAN};
 
 class Taper
 {

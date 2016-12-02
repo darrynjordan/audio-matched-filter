@@ -1,5 +1,5 @@
-#ifndef SPECTRUM_ANALYZER_HPP
-#define SPECTRUM_ANALYZER_HPP
+#ifndef TRANSFORMER_HPP
+#define TRANSFORMER_HPP
 
 #include <fftw3.h>
 #include <stdint.h>
@@ -10,7 +10,9 @@
 #include "taper.hpp"
 #include "plot.hpp"
 
-class SpectrumAnalyzer
+enum SignalDomain {TIME, FREQUENCY};
+
+class Transformer
 {
 	private:
 		double* b_samples;			
@@ -27,10 +29,11 @@ class SpectrumAnalyzer
 		GNUPlot freqPlot;
 	
 	public: 
-		SpectrumAnalyzer(void);
+		Transformer(void);
 		void init(int num_samples, TaperFunction taperFunction);
-		void generateSpectrum(void);
+		void computeSpectrum(void);
 		void loadBuffer(int16_t* buf_samples);	
+		void plotSignal(SignalDomain Domain);
 };
 
 #endif

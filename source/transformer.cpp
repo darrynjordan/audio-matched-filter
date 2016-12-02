@@ -1,13 +1,13 @@
-#include "spectrum_analyzer.hpp"
+#include "transformer.hpp"
 
 
-SpectrumAnalyzer::SpectrumAnalyzer(void)
+Transformer::Transformer(void)
 {
 	
 }
 
 
-void SpectrumAnalyzer::init(int num_samples, TaperFunction taperFunction)
+void Transformer::init(int num_samples, TaperFunction taperFunction)
 {
 	n_samples = num_samples;
 	ns_spectrum = n_samples/2 + 1;
@@ -24,18 +24,16 @@ void SpectrumAnalyzer::init(int num_samples, TaperFunction taperFunction)
 }
 
 
-void SpectrumAnalyzer::loadBuffer(int16_t* buf_samples)
+void Transformer::loadBuffer(int16_t* buf_samples)
 {
 	for (int i = 0; i < n_samples; i++)
 	{
 		b_samples[i] = (double)(buf_samples[i]*taper.getCoefficient(i));
-	}
-	
-	timePlot.plot<double_t>(b_samples);
+	}	
 }
 
 
-void SpectrumAnalyzer::generateSpectrum(void)
+void Transformer::computeSpectrum(void)
 {
 	fftw_plan spectrumPlan = fftw_plan_dft_r2c_1d(n_samples, b_samples, b_spectrum, FFTW_ESTIMATE);
 	fftw_execute(spectrumPlan);
@@ -43,8 +41,15 @@ void SpectrumAnalyzer::generateSpectrum(void)
 	for (int i = 0; i < ns_spectrum; i++)
 	{
 		b_spectrum_mag[i] = sqrt(pow(b_spectrum[i][0], 2) + pow(b_spectrum[i][1], 2));
-	}	
-	
-	freqPlot.plot<double_t>(b_spectrum_mag);
+	}		
+}
+
+
+void Transformer::plotSignal(SignalDomain Domain)
+{
+	if (Domain == TIME)
+		timePlot.plot<double_t>(b_samples);
+	else if (Domain == FREQUENCY)
+		freqPlot.plot<double_t>(b_spectrum_mag);	
 }
 

@@ -9,8 +9,8 @@
 /home/darryn/Git/word_peak/source/main.cpp
 signal_generator.hpp
 /home/darryn/Git/word_peak/source/signal_generator.hpp
-spectrum_analyzer.hpp
-/home/darryn/Git/word_peak/source/spectrum_analyzer.hpp
+transformer.hpp
+/home/darryn/Git/word_peak/source/transformer.hpp
 recorder.hpp
 /home/darryn/Git/word_peak/source/recorder.hpp
 taper.hpp
@@ -58,11 +58,21 @@ stdint.h
 iostream
 -
 
-/home/darryn/Git/word_peak/source/spectrum_analyzer.cpp
-spectrum_analyzer.hpp
-/home/darryn/Git/word_peak/source/spectrum_analyzer.hpp
+/home/darryn/Git/word_peak/source/taper.cpp
+taper.hpp
+/home/darryn/Git/word_peak/source/taper.hpp
 
-/home/darryn/Git/word_peak/source/spectrum_analyzer.hpp
+/home/darryn/Git/word_peak/source/taper.hpp
+iostream
+-
+math.h
+-
+
+/home/darryn/Git/word_peak/source/transformer.cpp
+transformer.hpp
+/home/darryn/Git/word_peak/source/transformer.hpp
+
+/home/darryn/Git/word_peak/source/transformer.hpp
 fftw3.h
 -
 stdint.h
@@ -79,14 +89,4 @@ taper.hpp
 /home/darryn/Git/word_peak/source/taper.hpp
 plot.hpp
 /home/darryn/Git/word_peak/source/plot.hpp
-
-/home/darryn/Git/word_peak/source/taper.cpp
-taper.hpp
-/home/darryn/Git/word_peak/source/taper.hpp
-
-/home/darryn/Git/word_peak/source/taper.hpp
-iostream
--
-math.h
--
 

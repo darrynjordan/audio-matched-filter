@@ -1,51 +1,43 @@
 #include "signal_generator.hpp"
-#include "spectrum_analyzer.hpp"
+#include "transformer.hpp"
 #include "recorder.hpp"
 #include "taper.hpp"
 
-#define CHANNELS 			1
-#define SAMPLE_RATE 		44100
-#define AMPLITUDE			1
-
-#define VERSION 			"1.0.0"
+#define VERSION "1.1.0"
 
 void splash(void);
-void performRecording(Recorder &recorder, int duration);
+void record(Recorder &recorder, int duration);
 
 int main()
 {
 	Recorder word;
 	Recorder sentence; 			
-	SpectrumAnalyzer spectrumAnalyzer;		
+	Transformer transformer;		
 	
 	splash();
-	performRecording(word, 3);	
 	
-	spectrumAnalyzer.init(word.getNumSamples(), HAMMING);
-	spectrumAnalyzer.loadBuffer(word.getBuffer());
-	spectrumAnalyzer.generateSpectrum();
+	record(word, 3);		
+	transformer.init(word.getNumSamples(), HAMMING);
+	transformer.loadBuffer(word.getBuffer());
+	transformer.computeSpectrum();
 	
-	//spectrumAnalyzer.plotSpectrum("Word Spectrum");	
-
-	/*
-	spectrumAnalyzer.allocateMemory(recorder.getNumSamples());
-	spectrumAnalyzer.loadSamples(recorder.getSamples());
-	spectrumAnalyzer.generateSpectrum();
-	spectrumAnalyzer.gnuPlot("Rx Frequency Plot");	
-	*/
+	record(sentence, 6);		
+	transformer.init(sentence.getNumSamples(), HAMMING);
+	transformer.loadBuffer(sentence.getBuffer());
+	transformer.computeSpectrum();
 	
     return 0;
 }
 
 
-void performRecording(Recorder &recorder, int duration)
+void record(Recorder &recorder, int duration)
 {
 	sf::Clock clock;
 	
 	clock.restart();	
 	recorder.start();
 	
-	std::cout << "Please say a word clearly." << std::endl;
+	std::cout << "Please speak slowly and clearly." << std::endl;
 	
 	while (clock.getElapsedTime() < sf::seconds(duration));
 	//std::cout << clock.getElapsedTime().asSeconds() << std::endl;
@@ -58,5 +50,5 @@ void splash(void)
 {
 	system("clear");
     printf("Word-Peak v%s\n", VERSION);
-    printf("------------------------------\n");
+    printf("----------------\n");
 }
