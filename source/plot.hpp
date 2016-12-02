@@ -4,8 +4,10 @@
 #include <stdint.h>
 #include <fstream>
 #include <sstream> 
+#include <fftw3.h>
+#include <typeinfo>
+#include <math.h>
 
-template <typename T> 
 class GNUPlot 
 {
 	private:
@@ -16,7 +18,7 @@ class GNUPlot
 		const char* y_label;	
 		
 	public:
-		GNUPlot(){title = "No Title"; x_label = "No Label"; y_label = "No Label";}
+		GNUPlot(){title = "No Title"; x_label = "No Label"; y_label = "No Label";}		
 
 		void init(int num_samples, const char* Title, bool is_fft_shift = false)
 		{
@@ -25,53 +27,6 @@ class GNUPlot
 			is_shift = is_fft_shift;
 		}
 		
-		void plot(T* buf_samples)
-		{	
-			FILE *gnuPipe = popen("gnuplot", "w");			
-			char command[50];	
-			
-			std::stringstream ss;
-			
-			//setup gnuplot
-			fputs("set terminal png enhanced font 'Script,12' linewidth 0.3 \n", gnuPipe);
-			
-			sprintf(command, "set title '%s' \n", title);
-			fputs(command, gnuPipe);
-			
-			sprintf(command, "set output '%s.png' \n", title);
-			fputs(command, gnuPipe);
-			
-			sprintf(command, "set xlabel '%s' \n", x_label);
-			fputs(command, gnuPipe);
-			
-			sprintf(command, "set ylabel '%s' \n", y_label);
-			fputs(command, gnuPipe);	
-			
-			fputs("", gnuPipe);
-			
-			fputs("plot '-' using 1:2 lt rgb 'blue' with lines notitle\n", gnuPipe);
-			
-			//write data to pipe
-			for (int i = 0; i < n_samples; i++) 
-			{
-				//ss << i << " " << buf_samples[i] << "\n";
-				//fprintf(gnuPipe, "%s", ss.str().c_str());
-				
-				fprintf(gnuPipe, "%i %f\n", i, buf_samples[i]);
-			}
-			
-			//close gnuplot pipe
-			fputs("e\n", gnuPipe);
-			pclose(gnuPipe);	
-			
-			//print completion message
-			sprintf(command, "%s", title);	
-		}
-		
-		//void plot(int16_t *buf_samples, int num_samples);
-		//void plot(double *buf_samples, int num_samples);
-		//void plot(fftw_complex* buf_samples, int num_samples);
-		
 		void setTitle(const char *Title){title = Title;}
         const char *getTitle(void){return title;}   
         
@@ -79,7 +34,50 @@ class GNUPlot
         const char *getXLabel(void){return x_label;}
         
         void setYLabel(const char *Label){y_label = Label;}
-        const char *getYLabel(void){return y_label;}  		
+        const char *getYLabel(void){return y_label;} 
+		
+		template <typename T> 
+		void plot(T* buf_samples)
+		{	
+			std::stringstream ss;			
+			ss << title << ".dat";
+			
+			//Create file with numerical data
+			std::fstream fp(ss.str(), std::fstream::out); 
+			
+			if(fp.is_open()) 
+			{				
+				for (int i = 0; i < n_samples; i++) 
+				{	
+					fp << i << " " << buf_samples[i] << "\n";
+				}
+			}
+			
+			fp.close();
+			
+			ss.str("");			
+			ss << title << ".cmd";
+			
+			//Create Command file
+			fp.open(ss.str(), std::fstream::out);
+			
+			if(fp.is_open()) 
+			{
+				fp 	<< "set terminal png enhanced font 'Script,12' linewidth 0.3 \n";
+				fp	<< "set title '" << title << "'\n";
+				fp	<< "set output '" << title << ".png' \n";
+				fp	<< "set xlabel '" << x_label << "'\n";
+				fp	<< "set ylabel '" << y_label << "'\n";
+				fp	<< "plot '" << title << ".dat' using 1:2 lt rgb 'blue' with lines notitle\n";
+			}
+			
+			fp.close();		
+			
+			ss.str("");			
+			ss << "gnuplot " << title << ".cmd";
+			
+			system(ss.str().c_str());	
+		}        
 };
 
 

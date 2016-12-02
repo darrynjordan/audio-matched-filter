@@ -15,17 +15,19 @@ class SpectrumAnalyzer
 	private:
 		double* b_samples;	
 		fftw_complex* b_spectrum;	
+		double* b_spectrum_mag;
 		
 		int n_samples;
 		fftw_plan spectrumPlan;		
 		Taper taper;
-		GNUPlot<double_t> p_word_time;
+		GNUPlot p_word_time;
+		GNUPlot p_word_freq;
 	
 	public: 
 		SpectrumAnalyzer(void);
 		void init(int num_samples, TaperFunction taperFunction);
 		void generateSpectrum(void);
-		void loadBuffer(int16_t* buf_samples);
+		void loadBuffer(int16_t* buf_samples);		
 };
 
 #endif

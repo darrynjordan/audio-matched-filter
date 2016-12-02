@@ -27,6 +27,12 @@ fstream
 -
 sstream
 -
+fftw3.h
+-
+typeinfo
+-
+math.h
+-
 
 /home/darryn/Git/word_peak/source/recorder.cpp
 recorder.hpp

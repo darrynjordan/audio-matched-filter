@@ -24,6 +24,7 @@ int main()
 	spectrumAnalyzer.init(word.getNumSamples(), HAMMING);
 	spectrumAnalyzer.loadBuffer(word.getBuffer());
 	spectrumAnalyzer.generateSpectrum();
+	
 	//spectrumAnalyzer.plotSpectrum("Word Spectrum");	
 
 	/*
