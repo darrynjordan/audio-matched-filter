@@ -36,7 +36,11 @@ class Transformer
 		void loadFreq(fftw_complex* buffer);	
 		void plot(SignalDomain Domain);
 		
+		double* getTime(void){return b_time;}
+		fftw_complex* getFreq(void){return b_freq;}
+		
 		double magnitude(fftw_complex complex_number){return sqrt(pow(complex_number[0], 2) + pow(complex_number[1], 2));}
+		int nextPowTwo(float value){return (pow(2, ceil(log(value)/log(2))));}
 };
 
 #endif

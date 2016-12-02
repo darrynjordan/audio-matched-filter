@@ -123,6 +123,33 @@ word_peak/fast:
 	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/build
 .PHONY : word_peak/fast
 
+source/filter.o: source/filter.cpp.o
+
+.PHONY : source/filter.o
+
+# target to build an object file
+source/filter.cpp.o:
+	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/filter.cpp.o
+.PHONY : source/filter.cpp.o
+
+source/filter.i: source/filter.cpp.i
+
+.PHONY : source/filter.i
+
+# target to preprocess a source file
+source/filter.cpp.i:
+	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/filter.cpp.i
+.PHONY : source/filter.cpp.i
+
+source/filter.s: source/filter.cpp.s
+
+.PHONY : source/filter.s
+
+# target to generate assembly for a file
+source/filter.cpp.s:
+	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/filter.cpp.s
+.PHONY : source/filter.cpp.s
+
 source/main.o: source/main.cpp.o
 
 .PHONY : source/main.o
@@ -294,6 +321,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... word_peak"
+	@echo "... source/filter.o"
+	@echo "... source/filter.i"
+	@echo "... source/filter.s"
 	@echo "... source/main.o"
 	@echo "... source/main.i"
 	@echo "... source/main.s"

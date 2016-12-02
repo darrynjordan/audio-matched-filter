@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+/home/darryn/Git/word_peak/source/filter.cpp
+filter.hpp
+/home/darryn/Git/word_peak/source/filter.hpp
+
+/home/darryn/Git/word_peak/source/filter.hpp
+fftw3.h
+-
+math.h
+-
+iostream
+-
+string.h
+-
+
 /home/darryn/Git/word_peak/source/main.cpp
 signal_generator.hpp
 /home/darryn/Git/word_peak/source/signal_generator.hpp
@@ -15,6 +29,8 @@ recorder.hpp
 /home/darryn/Git/word_peak/source/recorder.hpp
 taper.hpp
 /home/darryn/Git/word_peak/source/taper.hpp
+filter.hpp
+/home/darryn/Git/word_peak/source/filter.hpp
 
 /home/darryn/Git/word_peak/source/plot.cpp
 plot.hpp
