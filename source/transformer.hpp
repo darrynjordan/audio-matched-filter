@@ -15,15 +15,14 @@ enum SignalDomain {TIME, FREQUENCY};
 class Transformer
 {
 	private:
-		double* b_samples;			
-		fftw_complex* b_spectrum;	
-		double* b_spectrum_mag;
+		double* b_time;			
+		fftw_complex* b_freq;	
+		double* b_freq_mag;
 		
 		int n_samples;
-		int ns_spectrum;
 		
 		Taper taper;
-		fftw_plan spectrumPlan;	
+		fftw_plan plan;	
 		
 		GNUPlot timePlot;
 		GNUPlot freqPlot;
@@ -31,9 +30,13 @@ class Transformer
 	public: 
 		Transformer(void);
 		void init(int num_samples, TaperFunction taperFunction);
-		void computeSpectrum(void);
-		void loadBuffer(int16_t* buf_samples);	
-		void plotSignal(SignalDomain Domain);
+		void forward(void);
+		void inverse(void);
+		void loadTime(int16_t* buffer);
+		void loadFreq(fftw_complex* buffer);	
+		void plot(SignalDomain Domain);
+		
+		double magnitude(fftw_complex complex_number){return sqrt(pow(complex_number[0], 2) + pow(complex_number[1], 2));}
 };
 
 #endif

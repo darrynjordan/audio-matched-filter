@@ -13,7 +13,7 @@ class Recorder
 		sf::SoundBuffer buffer;
 		int16_t* b_samples;
 		int n_samples;
-		bool is_save;
+		bool is_save_audio;
 		
 	public:
 		Recorder(void);
@@ -21,7 +21,7 @@ class Recorder
 		void stop(void);
 		int getNumSamples(void);
 		int16_t* getBuffer(void);
-		void setSave(bool Save){is_save = Save;}
+		void setSaveAudio(bool Save){is_save_audio = Save;}
 };
 
 

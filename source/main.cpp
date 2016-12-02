@@ -3,7 +3,7 @@
 #include "recorder.hpp"
 #include "taper.hpp"
 
-#define VERSION "1.1.0"
+#define VERSION "1.2.0"
 
 void splash(void);
 void record(Recorder &recorder, int duration);
@@ -18,13 +18,8 @@ int main()
 	
 	record(word, 3);		
 	transformer.init(word.getNumSamples(), HAMMING);
-	transformer.loadBuffer(word.getBuffer());
-	transformer.computeSpectrum();
-	
-	record(sentence, 6);		
-	transformer.init(sentence.getNumSamples(), HAMMING);
-	transformer.loadBuffer(sentence.getBuffer());
-	transformer.computeSpectrum();
+	transformer.loadTime(word.getBuffer());
+	transformer.forward();
 	
     return 0;
 }
