@@ -18,14 +18,9 @@ class GNUPlot
 		const char* y_label;	
 		
 	public:
-		GNUPlot(){title = "No Title"; x_label = "No Label"; y_label = "No Label";}		
+		GNUPlot(void);		
 
-		void init(int num_samples, const char* Title, bool is_fft_shift = false)
-		{
-			title = Title;
-			n_samples = num_samples; 
-			is_shift = is_fft_shift;
-		}
+		void init(int num_samples, const char* Title, bool is_fft_shift = false);
 		
 		void setTitle(const char *Title){title = Title;}
         const char *getTitle(void){return title;}   
