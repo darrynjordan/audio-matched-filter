@@ -14,7 +14,7 @@ void Signal::plot(int num_samples, Domain domain)
 		time_plot.init(num_samples, "time-domain", false);
 		time_plot.plot<double_t>(b_time);
 	}
-	else if (domain == FREQUENCY)
+	else if (domain == FREQ)
 	{
 		freq_plot.init(num_samples, "freq-domain", false);
 		

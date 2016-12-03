@@ -11,18 +11,15 @@
 class Filter
 {
 	private:	
-		fftw_complex* b_filtered;	
-		double* b_filtered_mag;
-		
 		int ns_padded;
-	
+		
 	public: 
 		Filter(void);		
 		void pad(Signal& signal_1, Signal& signal_2);	
-		void matched(fftw_complex* b_ref, fftw_complex* b_raw);
-		fftw_complex* getResult(void){return b_filtered;}
+		void matched(Signal& ref, Signal& raw, Signal& result);
 		
 		int nextPowTwo(float value){return (pow(2, ceil(log(value)/log(2))));}
+		double magnitude(fftw_complex complex_number){return sqrt(pow(complex_number[0], 2) + pow(complex_number[1], 2));}
 };
 
 #endif

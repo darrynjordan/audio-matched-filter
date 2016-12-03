@@ -10,9 +10,10 @@
 class Recorder
 {
 	private:
+		sf::Clock clock;
 		sf::SoundBufferRecorder recordingBuffer;
 		sf::SoundBuffer raw_buffer;		
-		sf::Clock clock;
+		
 		double* b_samples;
 		bool is_save_audio;		
 		

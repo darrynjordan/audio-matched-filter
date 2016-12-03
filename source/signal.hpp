@@ -10,7 +10,7 @@
 #include "taper.hpp"
 #include "plot.hpp"
 
-enum Domain {TIME, FREQUENCY};
+enum Domain {TIME, FREQ};
 
 class Signal
 {
@@ -53,7 +53,8 @@ class Signal
 		void setDuration(double length){duration = length;}
 		void setNumSamples(int num_samples){n_samples = num_samples;}
 		void setNumPadded(int num_padded){ns_padded = num_padded;}
-		void setTimeBuffer(double* buffer){b_time = buffer;}	
+		void setTimeBuffer(double* buffer){b_time = buffer;}
+		void setFreqBuffer(fftw_complex* buffer){b_freq = buffer;}	
 		void setIsStandard(bool standard){is_standard = standard;}
 		
 		int getNumSamples(void){return n_samples;}	

@@ -60,9 +60,9 @@ class GNUPlot
 			
 			if(fp.is_open()) 
 			{
-				fp 	<< "set terminal png enhanced font 'Script,12' linewidth 0.1 \n";
+				fp 	<< "set terminal qt persist enhanced font 'Script,12'\n";
 				fp	<< "set title '" << title << "'\n";
-				fp	<< "set output '" << title << ".png' \n";
+				//fp	<< "set output '" << title << ".png' \n";
 				fp	<< "set xlabel '" << x_label << "'\n";
 				fp	<< "set ylabel '" << y_label << "'\n";
 				fp	<< "plot '" << title << ".dat' using 1:2 lt rgb 'blue' with lines notitle\n";
