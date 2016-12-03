@@ -72,6 +72,11 @@ void Signal::inverse(int num_samples)
 
 void Signal::saveAudio(void)
 {
+	// array type conversion
+	int16_t* b_play = (int16_t*)calloc(n_samples, sizeof(int16_t));
+    std::copy(b_time, b_time + n_samples, b_play);
+    
+	b_sound.loadFromSamples(b_play, n_samples, n_channels, sample_rate);
 	b_sound.saveToFile("generated_waveform.ogg");
 	std::cout << "generated_waveform.ogg" << std::endl;
 }

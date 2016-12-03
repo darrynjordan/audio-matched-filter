@@ -25,8 +25,9 @@ int main()
 	waveform.window(HAMMING, TIME);
 	waveform.forward(waveform.getNumSamples());
 	waveform.plot(waveform.getNumSamples(), TIME);	
-	waveform.play();		
 	waveform.saveAudio();
+	waveform.play();		
+	
 	
 	recorder.record(word, 1);	
 	recorder.record(sentence, 1);

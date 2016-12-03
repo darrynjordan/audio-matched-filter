@@ -11,8 +11,7 @@
 
 class Generator
 {
-	private:	    
-	    	    	
+
 	public:
 		Generator();
 		
