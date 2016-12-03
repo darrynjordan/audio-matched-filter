@@ -18,7 +18,6 @@ CMakeFiles/word_peak.dir/source/main.cpp.o
  /home/darryn/Git/word_peak/source/recorder.hpp
  /home/darryn/Git/word_peak/source/signal.hpp
  /home/darryn/Git/word_peak/source/taper.hpp
- /home/darryn/Git/word_peak/source/transformer.hpp
 CMakeFiles/word_peak.dir/source/plot.cpp.o
  /home/darryn/Git/word_peak/source/plot.cpp
  /home/darryn/Git/word_peak/source/plot.hpp
@@ -36,9 +35,3 @@ CMakeFiles/word_peak.dir/source/signal.cpp.o
 CMakeFiles/word_peak.dir/source/taper.cpp.o
  /home/darryn/Git/word_peak/source/taper.cpp
  /home/darryn/Git/word_peak/source/taper.hpp
-CMakeFiles/word_peak.dir/source/transformer.cpp.o
- /home/darryn/Git/word_peak/source/plot.hpp
- /home/darryn/Git/word_peak/source/signal.hpp
- /home/darryn/Git/word_peak/source/taper.hpp
- /home/darryn/Git/word_peak/source/transformer.cpp
- /home/darryn/Git/word_peak/source/transformer.hpp

@@ -1,5 +1,4 @@
 #include "generator.hpp"
-#include "transformer.hpp"
 #include "recorder.hpp"
 #include "taper.hpp"
 #include "filter.hpp"
@@ -17,27 +16,26 @@ int main()
 	
 	Recorder recorder;
 	Generator wavegen;		
-	Transformer transformer;
 	Filter filter;
 	
 	splash();
 	
 	wavegen.setSaveAudio(false);
 	wavegen.init(1, 40e3);	
-	wavegen.chirp(1000, 1, 0, 100);	
-	//wavegen.tone(1000, 1, 100);
+	wavegen.chirp(100, 1, 1e3, 1e3);	
+	//wavegen.tone(100, 1, 100);
 	wavegen.play();		
 	
 	recorder.setSaveAudio(false);
-	recorder.record(word, 2);	
+	recorder.record(word, 1);	
 	recorder.record(sentence, 1);
 	
 	word.window(UNIFORM, TIME);
 	filter.pad(word, sentence);	
 	
-	word.plot(word.getNumPadded(), TIME);
-	
-	transformer.forward(word);
+	word.plot(word.getNumPadded(), TIME);	
+	word.forward();	
+	word.plot(word.getNumSpectrum(), FREQUENCY);
 	
 	/*
 	wordTransform.init(word.getNumSamples(), ns_padded, UNIFORM);

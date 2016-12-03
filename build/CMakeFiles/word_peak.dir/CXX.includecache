@@ -41,8 +41,6 @@ iostream
 /home/darryn/Git/word_peak/source/main.cpp
 generator.hpp
 /home/darryn/Git/word_peak/source/generator.hpp
-transformer.hpp
-/home/darryn/Git/word_peak/source/transformer.hpp
 recorder.hpp
 /home/darryn/Git/word_peak/source/recorder.hpp
 taper.hpp
@@ -111,28 +109,4 @@ iostream
 -
 math.h
 -
-
-/home/darryn/Git/word_peak/source/transformer.cpp
-transformer.hpp
-/home/darryn/Git/word_peak/source/transformer.hpp
-
-/home/darryn/Git/word_peak/source/transformer.hpp
-fftw3.h
--
-stdint.h
--
-stdio.h
--
-string.h
--
-math.h
--
-SFML/Audio.hpp
--
-taper.hpp
-/home/darryn/Git/word_peak/source/taper.hpp
-plot.hpp
-/home/darryn/Git/word_peak/source/plot.hpp
-signal.hpp
-/home/darryn/Git/word_peak/source/signal.hpp
 

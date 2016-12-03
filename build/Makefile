@@ -312,33 +312,6 @@ source/taper.cpp.s:
 	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/taper.cpp.s
 .PHONY : source/taper.cpp.s
 
-source/transformer.o: source/transformer.cpp.o
-
-.PHONY : source/transformer.o
-
-# target to build an object file
-source/transformer.cpp.o:
-	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/transformer.cpp.o
-.PHONY : source/transformer.cpp.o
-
-source/transformer.i: source/transformer.cpp.i
-
-.PHONY : source/transformer.i
-
-# target to preprocess a source file
-source/transformer.cpp.i:
-	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/transformer.cpp.i
-.PHONY : source/transformer.cpp.i
-
-source/transformer.s: source/transformer.cpp.s
-
-.PHONY : source/transformer.s
-
-# target to generate assembly for a file
-source/transformer.cpp.s:
-	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/transformer.cpp.s
-.PHONY : source/transformer.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -369,9 +342,6 @@ help:
 	@echo "... source/taper.o"
 	@echo "... source/taper.i"
 	@echo "... source/taper.s"
-	@echo "... source/transformer.o"
-	@echo "... source/transformer.i"
-	@echo "... source/transformer.s"
 .PHONY : help
 
 

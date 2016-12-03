@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/darryn/Git/word_peak/build
 CMakeFiles/word_peak.dir/all:
 	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/depend
 	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/darryn/Git/word_peak/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target word_peak"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/darryn/Git/word_peak/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target word_peak"
 .PHONY : CMakeFiles/word_peak.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/word_peak.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/word_peak.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/darryn/Git/word_peak/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/darryn/Git/word_peak/build/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/word_peak.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/darryn/Git/word_peak/build/CMakeFiles 0
 .PHONY : CMakeFiles/word_peak.dir/rule
