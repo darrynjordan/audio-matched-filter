@@ -1,10 +1,10 @@
-#include "signal_generator.hpp"
+#include "generator.hpp"
 #include "transformer.hpp"
 #include "recorder.hpp"
 #include "taper.hpp"
 #include "filter.hpp"
 
-#define VERSION "1.5.0"
+#define VERSION "2.0.0"
 
 void splash(void);
 void record(Recorder &recorder, int duration);
@@ -12,7 +12,8 @@ void record(Recorder &recorder, int duration);
 int main()
 {
 	Recorder word;
-	Recorder sentence; 			
+	Recorder sentence; 	
+	Generator wavegen;		
 	Transformer wordTransform;	
 	Transformer sentenceTransform;
 	Transformer resultTransform;
@@ -20,21 +21,32 @@ int main()
 	
 	splash();
 	
-	record(word, 1);	
-	record(sentence, 1);
+	wavegen.init(2, 40e3);
 	
-	wordTransform.init(word.getNumSamples(), HAMMING);
-	wordTransform.loadTime(word.getBuffer());
-	wordTransform.forward();
+	wavegen.chirp(2000, 3, 1e3, 1e3);	
+	wavegen.play();		
+	record(word, 5);	
 	
-	sentenceTransform.init(sentence.getNumSamples(), HAMMING);
-	sentenceTransform.loadTime(sentence.getBuffer());
-	sentenceTransform.forward();
+	wavegen.chirp(2000, 3, 0.9e3, 1e3);
+	wavegen.play();		
+	record(sentence, 5);
 	
 	int ns_padded = resultTransform.nextPowTwo(word.getNumSamples() + sentence.getNumSamples() - 1);
 	
-	resultTransform.init(ns_padded, UNIFORM);
-	resultTransform.loadFreq(filter.matched(ns_padded, wordTransform.getFreq(), sentenceTransform.getFreq()));
+	wordTransform.init(word.getNumSamples(), ns_padded, UNIFORM);
+	wordTransform.loadTime(word.getBuffer());
+	wordTransform.forward();
+	//wordTransform.plot(TIME);
+	wordTransform.plot(FREQUENCY);
+	
+	sentenceTransform.init(sentence.getNumSamples(), ns_padded, HAMMING);
+	sentenceTransform.loadTime(sentence.getBuffer());
+	sentenceTransform.forward();	
+	
+	filter.matched(ns_padded, wordTransform.getFreq(), sentenceTransform.getFreq());
+	
+	resultTransform.init(ns_padded, ns_padded, UNIFORM);	
+	resultTransform.loadFreq(filter.getResult());
 	resultTransform.inverse();
 	resultTransform.plot(TIME);
 	
@@ -49,9 +61,10 @@ void record(Recorder &recorder, int duration)
 	clock.restart();	
 	recorder.start();
 	
-	std::cout << "Please speak slowly and clearly." << std::endl;
+	//std::cout << "Please speak slowly and clearly." << std::endl;
 	
 	while (clock.getElapsedTime() < sf::seconds(duration));
+	
 	//std::cout << clock.getElapsedTime().asSeconds() << std::endl;
 	
 	recorder.stop();	

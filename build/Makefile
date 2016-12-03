@@ -150,6 +150,33 @@ source/filter.cpp.s:
 	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/filter.cpp.s
 .PHONY : source/filter.cpp.s
 
+source/generator.o: source/generator.cpp.o
+
+.PHONY : source/generator.o
+
+# target to build an object file
+source/generator.cpp.o:
+	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/generator.cpp.o
+.PHONY : source/generator.cpp.o
+
+source/generator.i: source/generator.cpp.i
+
+.PHONY : source/generator.i
+
+# target to preprocess a source file
+source/generator.cpp.i:
+	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/generator.cpp.i
+.PHONY : source/generator.cpp.i
+
+source/generator.s: source/generator.cpp.s
+
+.PHONY : source/generator.s
+
+# target to generate assembly for a file
+source/generator.cpp.s:
+	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/generator.cpp.s
+.PHONY : source/generator.cpp.s
+
 source/main.o: source/main.cpp.o
 
 .PHONY : source/main.o
@@ -231,33 +258,6 @@ source/recorder.cpp.s:
 	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/recorder.cpp.s
 .PHONY : source/recorder.cpp.s
 
-source/signal_generator.o: source/signal_generator.cpp.o
-
-.PHONY : source/signal_generator.o
-
-# target to build an object file
-source/signal_generator.cpp.o:
-	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/signal_generator.cpp.o
-.PHONY : source/signal_generator.cpp.o
-
-source/signal_generator.i: source/signal_generator.cpp.i
-
-.PHONY : source/signal_generator.i
-
-# target to preprocess a source file
-source/signal_generator.cpp.i:
-	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/signal_generator.cpp.i
-.PHONY : source/signal_generator.cpp.i
-
-source/signal_generator.s: source/signal_generator.cpp.s
-
-.PHONY : source/signal_generator.s
-
-# target to generate assembly for a file
-source/signal_generator.cpp.s:
-	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/signal_generator.cpp.s
-.PHONY : source/signal_generator.cpp.s
-
 source/taper.o: source/taper.cpp.o
 
 .PHONY : source/taper.o
@@ -324,6 +324,9 @@ help:
 	@echo "... source/filter.o"
 	@echo "... source/filter.i"
 	@echo "... source/filter.s"
+	@echo "... source/generator.o"
+	@echo "... source/generator.i"
+	@echo "... source/generator.s"
 	@echo "... source/main.o"
 	@echo "... source/main.i"
 	@echo "... source/main.s"
@@ -333,9 +336,6 @@ help:
 	@echo "... source/recorder.o"
 	@echo "... source/recorder.i"
 	@echo "... source/recorder.s"
-	@echo "... source/signal_generator.o"
-	@echo "... source/signal_generator.i"
-	@echo "... source/signal_generator.s"
 	@echo "... source/taper.o"
 	@echo "... source/taper.i"
 	@echo "... source/taper.s"

@@ -20,6 +20,7 @@ class Transformer
 		double* b_freq_mag;
 		
 		int n_samples;
+		int ns_padded;
 		
 		Taper taper;
 		fftw_plan plan;	
@@ -29,7 +30,7 @@ class Transformer
 	
 	public: 
 		Transformer(void);
-		void init(int num_samples, TaperFunction taperFunction);
+		void init(int num_samples, int padded, TaperFunction taperFunction);
 		void forward(void);
 		void inverse(void);
 		void loadTime(int16_t* buffer);

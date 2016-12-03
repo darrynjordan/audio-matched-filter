@@ -4,12 +4,16 @@
 CMakeFiles/word_peak.dir/source/filter.cpp.o
  /home/darryn/Git/word_peak/source/filter.cpp
  /home/darryn/Git/word_peak/source/filter.hpp
+ /home/darryn/Git/word_peak/source/plot.hpp
+CMakeFiles/word_peak.dir/source/generator.cpp.o
+ /home/darryn/Git/word_peak/source/generator.cpp
+ /home/darryn/Git/word_peak/source/generator.hpp
 CMakeFiles/word_peak.dir/source/main.cpp.o
  /home/darryn/Git/word_peak/source/filter.hpp
+ /home/darryn/Git/word_peak/source/generator.hpp
  /home/darryn/Git/word_peak/source/main.cpp
  /home/darryn/Git/word_peak/source/plot.hpp
  /home/darryn/Git/word_peak/source/recorder.hpp
- /home/darryn/Git/word_peak/source/signal_generator.hpp
  /home/darryn/Git/word_peak/source/taper.hpp
  /home/darryn/Git/word_peak/source/transformer.hpp
 CMakeFiles/word_peak.dir/source/plot.cpp.o
@@ -18,9 +22,6 @@ CMakeFiles/word_peak.dir/source/plot.cpp.o
 CMakeFiles/word_peak.dir/source/recorder.cpp.o
  /home/darryn/Git/word_peak/source/recorder.cpp
  /home/darryn/Git/word_peak/source/recorder.hpp
-CMakeFiles/word_peak.dir/source/signal_generator.cpp.o
- /home/darryn/Git/word_peak/source/signal_generator.cpp
- /home/darryn/Git/word_peak/source/signal_generator.hpp
 CMakeFiles/word_peak.dir/source/taper.cpp.o
  /home/darryn/Git/word_peak/source/taper.cpp
  /home/darryn/Git/word_peak/source/taper.hpp

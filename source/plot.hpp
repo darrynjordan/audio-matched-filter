@@ -58,7 +58,7 @@ class GNUPlot
 			
 			if(fp.is_open()) 
 			{
-				fp 	<< "set terminal png enhanced font 'Script,12' linewidth 0.3 \n";
+				fp 	<< "set terminal png enhanced font 'Script,12' linewidth 0.1 \n";
 				fp	<< "set title '" << title << "'\n";
 				fp	<< "set output '" << title << ".png' \n";
 				fp	<< "set xlabel '" << x_label << "'\n";
