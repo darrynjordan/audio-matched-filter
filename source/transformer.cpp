@@ -9,15 +9,17 @@ Transformer::Transformer(void)
 
 void Transformer::forward(Signal& signal)
 {
-	/*b_freq = (fftw_complex*)calloc(signal.getNumPadded()*sizeof(fftw_complex));		
+	//b_freq = (fftw_complex*)calloc(signal.getNumPadded()*sizeof(fftw_complex));		
 	
-	fftw_plan plan = fftw_plan_dft_r2c_1d(signal.getNumPadded(), b_time, b_freq, FFTW_ESTIMATE | FFTW_PRESERVE_INPUT);
-	fftw_execute(plan);
+	//fftw_plan plan = fftw_plan_dft_r2c_1d(signal.getNumSamples(), signal.getTimeBuffer(), signal.getFreqBuffer(), FFTW_ESTIMATE | FFTW_PRESERVE_INPUT);
+	//fftw_execute(plan);
 	
+	/*
 	for (int i = 0; i < ns_padded; i++)
 	{
 		b_freq_mag[i] = magnitude(b_freq[i]);
-	}*/
+	}
+	*/
 }
 
 

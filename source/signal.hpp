@@ -43,6 +43,9 @@ class Signal
 		int getNumPadded(void){return ns_padded;}
 		double getDuration(void){return duration;}	
 		double getSampleRate(void){return sample_rate;}	
+		
+		double* getTimeBuffer(void){return b_time;}
+		fftw_complex* getFreqBuffer(void){return b_freq;}
 };
 
 

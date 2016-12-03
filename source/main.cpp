@@ -4,7 +4,7 @@
 #include "taper.hpp"
 #include "filter.hpp"
 
-#define VERSION "2.6.0"
+#define VERSION "2.7.0"
 
 void splash(void);
 
@@ -18,24 +18,24 @@ int main()
 	Recorder recorder;
 	Generator wavegen;		
 	Transformer transformer;
-	Filter filter;	
+	Filter filter;
 	
 	splash();
 	
 	wavegen.setSaveAudio(false);
-	wavegen.init(2, 40e3);	
-	//wavegen.chirp(2000, 3, 1e3, 1e3);	
-	wavegen.tone(2000, 2, 5);
+	wavegen.init(1, 40e3);	
+	wavegen.chirp(1000, 1, 0, 100);	
+	//wavegen.tone(1000, 1, 100);
 	wavegen.play();		
 	
 	recorder.setSaveAudio(false);
-	recorder.record(word, 3);	
+	recorder.record(word, 2);	
 	recorder.record(sentence, 1);
 	
-	word.window(HAMMING, TIME);
+	word.window(UNIFORM, TIME);
 	filter.pad(word, sentence);	
 	
-	word.plot(word.getNumSamples(), TIME);
+	word.plot(word.getNumPadded(), TIME);
 	
 	transformer.forward(word);
 	
