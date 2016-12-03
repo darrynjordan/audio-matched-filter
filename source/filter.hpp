@@ -17,7 +17,6 @@ class Filter
 	public: 
 		Filter(void);		
 		void matched(int ns_padded, fftw_complex* b_ref, fftw_complex* b_raw);		
-		void plot(void);
 		fftw_complex* getResult(void){return b_filtered;}
 };
 

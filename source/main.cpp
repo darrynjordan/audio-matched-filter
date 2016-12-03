@@ -4,12 +4,14 @@
 #include "taper.hpp"
 #include "filter.hpp"
 
-#define VERSION "2.5.0"
+#define VERSION "2.6.0"
 
 void splash(void);
 
 int main()
-{
+{	
+	int ns_padded;
+	
 	Signal word;
 	Signal sentence;
 	
@@ -20,16 +22,23 @@ int main()
 	
 	splash();
 	
+	wavegen.setSaveAudio(false);
 	wavegen.init(2, 40e3);	
 	wavegen.chirp(2000, 3, 1e3, 1e3);	
 	wavegen.play();		
 	
-	recorder.record(word, 5);	
+	recorder.setSaveAudio(false);
+	recorder.record(word, 1);	
+	recorder.record(sentence, 1);
 	
-
+	word.plot(TIME);	
+	//sentence.plot(TIME);	
+	
+	ns_padded = transformer.nextPowTwo(word.getNumSamples() + sentence.getNumSamples() - 1);
+	word.setNumPadded(ns_padded);
+	sentence.setNumPadded(ns_padded);
+	
 	/*
-	int ns_padded = resultTransform.nextPowTwo(word.getNumSamples() + sentence.getNumSamples() - 1);
-	
 	wordTransform.init(word.getNumSamples(), ns_padded, UNIFORM);
 	wordTransform.loadTime(word.getBuffer());
 	wordTransform.forward();

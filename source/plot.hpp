@@ -7,6 +7,7 @@
 #include <fftw3.h>
 #include <typeinfo>
 #include <math.h>
+#include <iostream>
 
 class GNUPlot 
 {
@@ -74,6 +75,5 @@ class GNUPlot
 			system(ss.str().c_str());	
 		}        
 };
-
 
 #endif

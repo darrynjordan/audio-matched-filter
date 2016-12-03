@@ -28,10 +28,3 @@ void Filter::matched(int ns_padded, fftw_complex* b_ref, fftw_complex* b_raw)
 		b_filtered_mag[i] = sqrt(pow(b_filtered[i][0], 2) + pow(b_filtered[i][1], 2));
 	}
 }
-
-
-void Filter::plot(void)
-{
-	resultPlot.plot<double>(b_filtered_mag);
-}
-

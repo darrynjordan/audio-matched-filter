@@ -6,8 +6,6 @@
 #include <stdint.h>
 #include <iostream>
 
-using namespace std;
-
 class Generator
 {
 	private:
@@ -16,7 +14,7 @@ class Generator
 	    int16_t* b_samples;
 	    int n_samples;
 	    int channels;
-	    int sampleRate;
+	    int dac_rate;
 	    bool is_save_audio;
 		
 	public:
@@ -26,7 +24,6 @@ class Generator
 		void tone(float amplitude, float duration, float frequency);
 		void file(char* fileName);
 		void play(void);
-		int16_t* getSamples(void);
 		void setSaveAudio(bool Save){is_save_audio = Save;}
 };
 

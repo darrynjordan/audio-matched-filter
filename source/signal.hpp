@@ -17,7 +17,8 @@ class Signal
 		
 		int n_samples;
 		int ns_padded;
-		int sample_rate;
+		double sample_rate;
+		double duration;
 		
 		Taper taper;
 		GNUPlot time_plot;
@@ -31,10 +32,17 @@ class Signal
 		void conjugate(void);		
 		void plot(Domain signal_domain);
 		
+		void setSampleRate(double rate){sample_rate = rate;}
+		void setDuration(double length){duration = length;}
 		void setNumSamples(int num_samples){n_samples = num_samples;}
 		void setNumPadded(int num_padded){ns_padded = num_padded;}
-		void setTaper(TaperFunction Taper){taper.setFunction(Taper);}
-		void setTimeBuffer(double* buffer){b_time = buffer;}
+		void setTaper(TaperFunction function){taper.setFunction(function);}
+		void setTimeBuffer(double* buffer){b_time = buffer;}	
+		
+		int getNumSamples(void){return n_samples;}	
+		int getNumPadded(void){return ns_padded;}
+		double getDuration(void){return duration;}	
+		double getSampleRate(void){return sample_rate;}
 		
 		//fftw_complex getFreqSample(int sample_num){return b_freq[sample_num];}
 };

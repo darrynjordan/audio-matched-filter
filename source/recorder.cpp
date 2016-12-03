@@ -10,14 +10,12 @@ Recorder::Recorder(void)
 }
 
 
-void Recorder::record(Signal rec_signal, int duration)
+void Recorder::record(Signal& signal, double duration)
 {
-	signal = rec_signal;
-	
 	clock.restart();		
 	
 	recordingBuffer.start();
-	std::cout << "Recording started." << std::endl;
+	std::cout << "recording started." << std::endl;
 	
 	//std::cout << "Please speak slowly and clearly." << std::endl;
 	
@@ -26,21 +24,30 @@ void Recorder::record(Signal rec_signal, int duration)
 	//std::cout << clock.getElapsedTime().asSeconds() << std::endl;
 	
 	recordingBuffer.stop();
-	std::cout << "Recording stopped." << std::endl;
+	std::cout << "recording stopped." << std::endl;
 	
 	raw_buffer = recordingBuffer.getBuffer();
 	
-	signal.setNumSamples(raw_buffer.getSampleCount());
-	signal.setTimeBuffer((double*)raw_buffer.getSamples());
+	signal.setNumSamples(raw_buffer.getSampleCount());	
+	signal.setDuration(duration);
+	signal.setSampleRate(signal.getNumSamples()/duration);
+	
+	std::cout << "num_samples: \t" << signal.getNumSamples() << std::endl;
+	std::cout << "duration: \t" << signal.getDuration() << "\t[s]" << std::endl;
+	std::cout << "sample_rate: \t" << signal.getSampleRate() << "\t[Hz]" << std::endl;
+
+	// array type conversion
+	b_samples = (double*)malloc(signal.getNumSamples()*sizeof(double));		
+	memset(b_samples, 0, signal.getNumSamples()*sizeof(double));	
+    std::copy(raw_buffer.getSamples(), raw_buffer.getSamples() + signal.getNumSamples(), b_samples);
+    
+	signal.setTimeBuffer(b_samples);
 	
 	if (is_save_audio)
 	{
-		raw_buffer.saveToFile("recorded_signal.ogg");
-		std::cout << "Saved: recorded_signal.ogg" << std::endl;
-	}
-	
-	
-	
+		raw_buffer.saveToFile("recorded_waveform.ogg");
+		std::cout << "saved: \t\trecorded_waveform.ogg" << std::endl;
+	}	
 }
 
 

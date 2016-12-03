@@ -65,6 +65,8 @@ typeinfo
 -
 math.h
 -
+iostream
+-
 
 /home/darryn/Git/word_peak/source/recorder.cpp
 recorder.hpp
@@ -72,6 +74,10 @@ recorder.hpp
 
 /home/darryn/Git/word_peak/source/recorder.hpp
 iostream
+-
+string.h
+-
+algorithm
 -
 SFML/Audio.hpp
 -
