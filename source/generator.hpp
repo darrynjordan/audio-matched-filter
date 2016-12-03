@@ -1,30 +1,24 @@
 #ifndef GENERATOR_HPP
 #define GENERATOR_HPP
 
-#include <SFML/Audio.hpp>
 #include <cmath>
 #include <stdint.h>
 #include <iostream>
 
+#include <SFML/Audio.hpp>
+
+#include "signal.hpp"
+
 class Generator
 {
-	private:
-	    sf::Sound sound;
-	    sf::SoundBuffer buffer;
-	    int16_t* b_samples;
-	    int n_samples;
-	    int channels;
-	    int dac_rate;
-	    bool is_save_audio;
-		
+	private:	    
+	    	    	
 	public:
-		Generator(void);
-		void init(int Channels, int SampleRate);
-		void chirp(float amplitude, float duration, float centerFrequency, float bandwidth);
-		void tone(float amplitude, float duration, float frequency);
-		void file(char* fileName);
-		void play(void);
-		void setSaveAudio(bool Save){is_save_audio = Save;}
+		Generator();
+		
+		void tone(Signal& waveform, float amp, float duration, float freq, int channels = 1, int sample_rate = pow(2, 15));
+		void chirp(Signal& waveform, float amp, float duration, float center_freq, float bandwidth, int channels = 1, int sample_rate = 32768);		
+		//void load(char* fileName);
 };
 
 #endif

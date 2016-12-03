@@ -31,14 +31,9 @@ void Recorder::record(Signal& signal, double duration)
 	signal.setNumSamples(raw_buffer.getSampleCount());	
 	signal.setDuration(duration);
 	signal.setSampleRate(signal.getNumSamples()/duration);
-	
-	std::cout << "num_samples: \t" << signal.getNumSamples() << std::endl;
-	std::cout << "duration: \t" << signal.getDuration() << "\t[s]" << std::endl;
-	std::cout << "sample_rate: \t" << signal.getSampleRate() << "\t[Hz]" << std::endl;
 
 	// array type conversion
-	b_samples = (double*)malloc(signal.getNumSamples()*sizeof(double));		
-	memset(b_samples, 0, signal.getNumSamples()*sizeof(double));	
+	b_samples = (double*)calloc(signal.getNumSamples(), sizeof(double));	
     std::copy(raw_buffer.getSamples(), raw_buffer.getSamples() + signal.getNumSamples(), b_samples);
     
 	signal.setTimeBuffer(b_samples);

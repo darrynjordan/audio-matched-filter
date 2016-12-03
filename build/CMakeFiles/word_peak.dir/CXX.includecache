@@ -29,14 +29,16 @@ generator.hpp
 /home/darryn/Git/word_peak/source/generator.hpp
 
 /home/darryn/Git/word_peak/source/generator.hpp
-SFML/Audio.hpp
--
 cmath
 -
 stdint.h
 -
 iostream
 -
+SFML/Audio.hpp
+-
+signal.hpp
+/home/darryn/Git/word_peak/source/signal.hpp
 
 /home/darryn/Git/word_peak/source/main.cpp
 generator.hpp
@@ -89,11 +91,13 @@ signal.hpp
 /home/darryn/Git/word_peak/source/signal.hpp
 
 /home/darryn/Git/word_peak/source/signal.hpp
+string.h
+-
 iostream
 -
 fftw3.h
 -
-string.h
+SFML/Audio.hpp
 -
 taper.hpp
 /home/darryn/Git/word_peak/source/taper.hpp

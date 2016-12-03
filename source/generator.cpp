@@ -7,72 +7,60 @@ Generator::Generator(void)
 }
 
 
-void Generator::init(int Channels, int SampleRate)
+void Generator::chirp(Signal& waveform, float amp, float duration, float center_freq, float bandwidth, int channels, int sample_rate)
 {
-	channels = Channels;
-	std::cout << "channels: \t" << channels << std::endl;
-	dac_rate = SampleRate;
-	std::cout << "dac_rate: \t" << dac_rate << "\t[Hz]" << std::endl;
-}
-
-
-void Generator::play(void)
-{
- 	sound.setBuffer(buffer);
-	sound.play();
-}
-
-
-void Generator::chirp(float amplitude, float duration, float centerFrequency, float bandwidth)
-{
-	float pi = acos(-1.0);
-	float chirpRate  = bandwidth/duration;
-	int n_samples = duration*dac_rate;
+	int n_samples = duration*sample_rate;
+	double time = 0;
+	double pi = acos(-1.0);	
+	double chirp_rate  = bandwidth/duration;	
 	
-	b_samples = (int16_t*)malloc(n_samples*sizeof(int16_t));
+	double* b_chirp = (double*)malloc(n_samples*sizeof(double));
 	
 	for (int i = 0; i < n_samples; i++)
 	{		
-		float t = i*(duration/(duration*dac_rate));
-		b_samples[i] = amplitude*cos(2*pi*(centerFrequency)*t + pi*chirpRate*pow(t,2)); 				
-	}
-	
-	buffer.loadFromSamples(&b_samples[0], n_samples, channels, dac_rate);
-	
-	if (is_save_audio)
-	{
-		buffer.saveToFile("generated_waveform.ogg");
-		std::cout << "saved: \t\tgenerated_waveform.ogg" << std::endl;
-	}
-	
-	std::cout << "amplitude: \t" << amplitude << std::endl;
-	std::cout << "duration: \t" << duration << "\t[s]" << std::endl;
-	std::cout << "center_freq: \t" << centerFrequency << "\t[Hz]" << std::endl;
-	std::cout << "bandwidth: \t" << bandwidth << "\t[Hz]" << std::endl;	
+		time = (double)i/(double)sample_rate;
+		b_chirp[i] = amp*cos(2*pi*(center_freq)*time + pi*chirp_rate*pow(time,2)); 				
+	}		
+
+	waveform.setIsStandard(true);
+	waveform.setAmplitude(amp);
+	waveform.setDuration(duration);
+	waveform.setChannels(channels);
+	waveform.setSampleRate(sample_rate);
+	waveform.setNumSamples(n_samples);	
+	waveform.setTimeBuffer(b_chirp);
 }
 
 
-void Generator::tone(float amplitude, float duration, float frequency)
+void Generator::tone(Signal& waveform, float amp, float duration, float freq, int channels, int sample_rate)
 {
-	float pi = acos(-1.0);
-	int n_samples = duration*dac_rate;
+	int n_samples = duration*sample_rate;
+	double time = 0;
+	double pi = acos(-1.0);	
 	
-	b_samples = (int16_t*)malloc(n_samples*sizeof(int16_t));
-		
+	double* b_tone = (double*)malloc(n_samples*sizeof(double));
+	
 	for (int i = 0; i < n_samples; i++)
 	{		
-		float t = i*(duration/(duration*dac_rate));
-		b_samples[i] = amplitude*cos(2*pi*frequency*t); 
-	}
+		time = (double)i/(double)sample_rate;
+		b_tone[i] = amp*cos(2*pi*freq*time); 		
+	}	
 	
-	buffer.loadFromSamples(&b_samples[0], n_samples, channels, dac_rate);
-	
+	waveform.setIsStandard(true);
+	waveform.setAmplitude(amp);
+	waveform.setDuration(duration);
+	waveform.setChannels(channels);
+	waveform.setSampleRate(sample_rate);
+	waveform.setNumSamples(n_samples);	
+	waveform.setTimeBuffer(b_tone);
 }
 
-void Generator::file(char* fileName)
+
+/*
+void Generator::load(char* fileName)
 {
 	if (!buffer.loadFromFile(fileName))
         exit(0);
-}
+}*/
 
 
