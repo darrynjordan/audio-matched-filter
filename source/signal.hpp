@@ -32,8 +32,6 @@ class Signal
 		GNUPlot time_plot;
 		GNUPlot freq_plot;
 		
-		fftw_plan plan;
-		
 		sf::Sound sound;
 	    sf::SoundBuffer b_sound;
 		

@@ -72,8 +72,8 @@ void Signal::inverse(int num_samples)
 
 void Signal::saveAudio(void)
 {
-	/*b_sound.saveToFile("generated_waveform.ogg");
-	std::cout << "saved: \tgenerated_waveform.ogg" << std::endl;*/
+	b_sound.saveToFile("generated_waveform.ogg");
+	std::cout << "generated_waveform.ogg" << std::endl;
 }
 
 

@@ -41,7 +41,7 @@ void Recorder::record(Signal& signal, double duration)
 	if (is_save_audio)
 	{
 		raw_buffer.saveToFile("recorded_waveform.ogg");
-		std::cout << "saved: \t\trecorded_waveform.ogg" << std::endl;
+		std::cout << "recorded_waveform.ogg" << std::endl;
 	}	
 }
 

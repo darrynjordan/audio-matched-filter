@@ -45,7 +45,8 @@ class GNUPlot
 			{				
 				for (int i = 0; i < n_samples; i++) 
 				{	
-					fp << i << " " << buf_samples[i] << "\n";
+					double time = i/pow(2, 15);
+					fp << time << " " << buf_samples[i] << "\n";
 				}
 			}
 			

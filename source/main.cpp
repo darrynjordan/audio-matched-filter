@@ -3,7 +3,7 @@
 #include "taper.hpp"
 #include "filter.hpp"
 
-#define VERSION "2.8.0"
+#define VERSION "2.9.0"
 
 void splash(void);
 
@@ -21,19 +21,19 @@ int main()
 	
 	splash();
 	
-	//generator.tone(waveform, 100, 1, 1e3);
 	generator.chirp(waveform, 100, 1, 1e3, 1e3);
+	waveform.window(HAMMING, TIME);
 	waveform.forward(waveform.getNumSamples());
-	waveform.plot(waveform.getNumSamples(), FREQUENCY);
+	waveform.plot(waveform.getNumSamples(), TIME);	
 	waveform.play();		
-	
-	recorder.setSaveAudio(false);
+	waveform.saveAudio();
 	
 	recorder.record(word, 1);	
 	recorder.record(sentence, 1);
 	
 	word.window(UNIFORM, TIME);
-	filter.pad(word, sentence);		
+	
+	filter.pad(word, sentence);			
 
 	word.forward(word.getNumPadded());	
 	sentence.forward(word.getNumPadded());	
