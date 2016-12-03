@@ -6,10 +6,8 @@ Filter::Filter(void)
 }
 
 
-void Filter::matched(int ns_padded, fftw_complex* b_ref, fftw_complex* b_raw)
+void Filter::matched(fftw_complex* b_ref, fftw_complex* b_raw)
 {	
-	resultPlot.init(ns_padded, "frequency-domain-result", false);
-	
 	b_filtered = (fftw_complex*)malloc(ns_padded*sizeof(fftw_complex));	
 	b_filtered_mag = (double*)malloc(ns_padded*sizeof(double));
 	
@@ -27,4 +25,12 @@ void Filter::matched(int ns_padded, fftw_complex* b_ref, fftw_complex* b_raw)
 		
 		b_filtered_mag[i] = sqrt(pow(b_filtered[i][0], 2) + pow(b_filtered[i][1], 2));
 	}
+}
+
+
+void Filter::pad(Signal& signal_1, Signal& signal_2)
+{
+	ns_padded = nextPowTwo(signal_1.getNumSamples() + signal_2.getNumSamples() - 1);
+	signal_1.pad(ns_padded);
+	signal_2.pad(ns_padded);	
 }

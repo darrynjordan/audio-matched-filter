@@ -21,6 +21,8 @@ string.h
 -
 plot.hpp
 /home/darryn/Git/word_peak/source/plot.hpp
+signal.hpp
+/home/darryn/Git/word_peak/source/signal.hpp
 
 /home/darryn/Git/word_peak/source/generator.cpp
 generator.hpp
@@ -92,6 +94,8 @@ signal.hpp
 iostream
 -
 fftw3.h
+-
+string.h
 -
 taper.hpp
 /home/darryn/Git/word_peak/source/taper.hpp

@@ -24,25 +24,25 @@ int main()
 	
 	wavegen.setSaveAudio(false);
 	wavegen.init(2, 40e3);	
-	wavegen.chirp(2000, 3, 1e3, 1e3);	
+	//wavegen.chirp(2000, 3, 1e3, 1e3);	
+	wavegen.tone(2000, 2, 5);
 	wavegen.play();		
 	
 	recorder.setSaveAudio(false);
-	recorder.record(word, 1);	
+	recorder.record(word, 3);	
 	recorder.record(sentence, 1);
 	
-	word.plot(TIME);	
-	//sentence.plot(TIME);	
+	word.window(HAMMING, TIME);
+	filter.pad(word, sentence);	
 	
-	ns_padded = transformer.nextPowTwo(word.getNumSamples() + sentence.getNumSamples() - 1);
-	word.setNumPadded(ns_padded);
-	sentence.setNumPadded(ns_padded);
+	word.plot(word.getNumSamples(), TIME);
+	
+	transformer.forward(word);
 	
 	/*
 	wordTransform.init(word.getNumSamples(), ns_padded, UNIFORM);
 	wordTransform.loadTime(word.getBuffer());
 	wordTransform.forward();
-
 	
 	sentenceTransform.init(sentence.getNumSamples(), ns_padded, HAMMING);
 	sentenceTransform.loadTime(sentence.getBuffer());

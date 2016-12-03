@@ -4,6 +4,8 @@
 CMakeFiles/word_peak.dir/source/filter.cpp.o: ../source/filter.cpp
 CMakeFiles/word_peak.dir/source/filter.cpp.o: ../source/filter.hpp
 CMakeFiles/word_peak.dir/source/filter.cpp.o: ../source/plot.hpp
+CMakeFiles/word_peak.dir/source/filter.cpp.o: ../source/signal.hpp
+CMakeFiles/word_peak.dir/source/filter.cpp.o: ../source/taper.hpp
 
 CMakeFiles/word_peak.dir/source/generator.cpp.o: ../source/generator.cpp
 CMakeFiles/word_peak.dir/source/generator.cpp.o: ../source/generator.hpp

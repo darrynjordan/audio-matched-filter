@@ -5,6 +5,8 @@ CMakeFiles/word_peak.dir/source/filter.cpp.o
  /home/darryn/Git/word_peak/source/filter.cpp
  /home/darryn/Git/word_peak/source/filter.hpp
  /home/darryn/Git/word_peak/source/plot.hpp
+ /home/darryn/Git/word_peak/source/signal.hpp
+ /home/darryn/Git/word_peak/source/taper.hpp
 CMakeFiles/word_peak.dir/source/generator.cpp.o
  /home/darryn/Git/word_peak/source/generator.cpp
  /home/darryn/Git/word_peak/source/generator.hpp
