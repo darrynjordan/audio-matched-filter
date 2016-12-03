@@ -13,19 +13,29 @@ CMakeFiles/word_peak.dir/source/main.cpp.o: ../source/generator.hpp
 CMakeFiles/word_peak.dir/source/main.cpp.o: ../source/main.cpp
 CMakeFiles/word_peak.dir/source/main.cpp.o: ../source/plot.hpp
 CMakeFiles/word_peak.dir/source/main.cpp.o: ../source/recorder.hpp
+CMakeFiles/word_peak.dir/source/main.cpp.o: ../source/signal.hpp
 CMakeFiles/word_peak.dir/source/main.cpp.o: ../source/taper.hpp
 CMakeFiles/word_peak.dir/source/main.cpp.o: ../source/transformer.hpp
 
 CMakeFiles/word_peak.dir/source/plot.cpp.o: ../source/plot.cpp
 CMakeFiles/word_peak.dir/source/plot.cpp.o: ../source/plot.hpp
 
+CMakeFiles/word_peak.dir/source/recorder.cpp.o: ../source/plot.hpp
 CMakeFiles/word_peak.dir/source/recorder.cpp.o: ../source/recorder.cpp
 CMakeFiles/word_peak.dir/source/recorder.cpp.o: ../source/recorder.hpp
+CMakeFiles/word_peak.dir/source/recorder.cpp.o: ../source/signal.hpp
+CMakeFiles/word_peak.dir/source/recorder.cpp.o: ../source/taper.hpp
+
+CMakeFiles/word_peak.dir/source/signal.cpp.o: ../source/plot.hpp
+CMakeFiles/word_peak.dir/source/signal.cpp.o: ../source/signal.cpp
+CMakeFiles/word_peak.dir/source/signal.cpp.o: ../source/signal.hpp
+CMakeFiles/word_peak.dir/source/signal.cpp.o: ../source/taper.hpp
 
 CMakeFiles/word_peak.dir/source/taper.cpp.o: ../source/taper.cpp
 CMakeFiles/word_peak.dir/source/taper.cpp.o: ../source/taper.hpp
 
 CMakeFiles/word_peak.dir/source/transformer.cpp.o: ../source/plot.hpp
+CMakeFiles/word_peak.dir/source/transformer.cpp.o: ../source/signal.hpp
 CMakeFiles/word_peak.dir/source/transformer.cpp.o: ../source/taper.hpp
 CMakeFiles/word_peak.dir/source/transformer.cpp.o: ../source/transformer.cpp
 CMakeFiles/word_peak.dir/source/transformer.cpp.o: ../source/transformer.hpp

@@ -15,9 +15,6 @@ void Transformer::init(int num_samples, int padded, TaperFunction taperFunction)
 	taper.setFunction(taperFunction);
 	taper.generate(n_samples);
 	
-	timePlot.init(ns_padded, "time-domain", false);
-	freqPlot.init(ns_padded, "freq-domain", false);
-	
 	b_time     = (double*)malloc(ns_padded*sizeof(double));
 	b_freq_mag = (double*)malloc(ns_padded*sizeof(double));
 	b_freq     = (fftw_complex*)malloc(ns_padded*sizeof(fftw_complex));		
@@ -66,12 +63,4 @@ void Transformer::inverse(void)
 	fftw_execute(plan);	
 }
 
-
-void Transformer::plot(SignalDomain Domain)
-{
-	if (Domain == TIME)
-		timePlot.plot<double_t>(b_time);
-	else if (Domain == FREQUENCY)
-		freqPlot.plot<double_t>(b_freq_mag);	
-}
 

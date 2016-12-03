@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/darryn/Git/word_peak/source/main.cpp" "/home/darryn/Git/word_peak/build/CMakeFiles/word_peak.dir/source/main.cpp.o"
   "/home/darryn/Git/word_peak/source/plot.cpp" "/home/darryn/Git/word_peak/build/CMakeFiles/word_peak.dir/source/plot.cpp.o"
   "/home/darryn/Git/word_peak/source/recorder.cpp" "/home/darryn/Git/word_peak/build/CMakeFiles/word_peak.dir/source/recorder.cpp.o"
+  "/home/darryn/Git/word_peak/source/signal.cpp" "/home/darryn/Git/word_peak/build/CMakeFiles/word_peak.dir/source/signal.cpp.o"
   "/home/darryn/Git/word_peak/source/taper.cpp" "/home/darryn/Git/word_peak/build/CMakeFiles/word_peak.dir/source/taper.cpp.o"
   "/home/darryn/Git/word_peak/source/transformer.cpp" "/home/darryn/Git/word_peak/build/CMakeFiles/word_peak.dir/source/transformer.cpp.o"
   )

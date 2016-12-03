@@ -5,43 +5,42 @@ Recorder::Recorder(void)
 {
 	if (!sf::SoundBufferRecorder::isAvailable())
 	{
-		cout << "error: audio capture is not available on this system" << endl;
+		std::cout << "error: audio capture is not available on this system" << std::endl;
 	}
 }
 
-void Recorder::start(void)
-{
-	recordingBuffer.start();
-	cout << "Recording started." << endl;
-}
 
-
-void Recorder::stop(void)
+void Recorder::record(Signal rec_signal, int duration)
 {
-	recordingBuffer.stop();
-	cout << "Recording stopped." << endl;
+	signal = rec_signal;
 	
-	buffer = recordingBuffer.getBuffer();
-	n_samples = buffer.getSampleCount();
-	b_samples = (int16_t*)buffer.getSamples();
+	clock.restart();		
+	
+	recordingBuffer.start();
+	std::cout << "Recording started." << std::endl;
+	
+	//std::cout << "Please speak slowly and clearly." << std::endl;
+	
+	while (clock.getElapsedTime() < sf::seconds(duration));
+	
+	//std::cout << clock.getElapsedTime().asSeconds() << std::endl;
+	
+	recordingBuffer.stop();
+	std::cout << "Recording stopped." << std::endl;
+	
+	raw_buffer = recordingBuffer.getBuffer();
+	
+	signal.setNumSamples(raw_buffer.getSampleCount());
+	signal.setTimeBuffer((double*)raw_buffer.getSamples());
 	
 	if (is_save_audio)
 	{
-		buffer.saveToFile("recorded_signal.ogg");
-		cout << "Saved: recorded_signal.ogg" << endl;
-	}	
-}
-
-
-int Recorder::getNumSamples(void)
-{
-	return n_samples;
-}
-
-
-int16_t* Recorder::getBuffer(void)
-{
-	return b_samples;
+		raw_buffer.saveToFile("recorded_signal.ogg");
+		std::cout << "Saved: recorded_signal.ogg" << std::endl;
+	}
+	
+	
+	
 }
 
 

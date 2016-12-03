@@ -258,6 +258,33 @@ source/recorder.cpp.s:
 	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/recorder.cpp.s
 .PHONY : source/recorder.cpp.s
 
+source/signal.o: source/signal.cpp.o
+
+.PHONY : source/signal.o
+
+# target to build an object file
+source/signal.cpp.o:
+	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/signal.cpp.o
+.PHONY : source/signal.cpp.o
+
+source/signal.i: source/signal.cpp.i
+
+.PHONY : source/signal.i
+
+# target to preprocess a source file
+source/signal.cpp.i:
+	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/signal.cpp.i
+.PHONY : source/signal.cpp.i
+
+source/signal.s: source/signal.cpp.s
+
+.PHONY : source/signal.s
+
+# target to generate assembly for a file
+source/signal.cpp.s:
+	$(MAKE) -f CMakeFiles/word_peak.dir/build.make CMakeFiles/word_peak.dir/source/signal.cpp.s
+.PHONY : source/signal.cpp.s
+
 source/taper.o: source/taper.cpp.o
 
 .PHONY : source/taper.o
@@ -336,6 +363,9 @@ help:
 	@echo "... source/recorder.o"
 	@echo "... source/recorder.i"
 	@echo "... source/recorder.s"
+	@echo "... source/signal.o"
+	@echo "... source/signal.i"
+	@echo "... source/signal.s"
 	@echo "... source/taper.o"
 	@echo "... source/taper.i"
 	@echo "... source/taper.s"

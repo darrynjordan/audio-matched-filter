@@ -75,6 +75,22 @@ iostream
 -
 SFML/Audio.hpp
 -
+signal.hpp
+/home/darryn/Git/word_peak/source/signal.hpp
+
+/home/darryn/Git/word_peak/source/signal.cpp
+signal.hpp
+/home/darryn/Git/word_peak/source/signal.hpp
+
+/home/darryn/Git/word_peak/source/signal.hpp
+iostream
+-
+fftw3.h
+-
+taper.hpp
+/home/darryn/Git/word_peak/source/taper.hpp
+plot.hpp
+/home/darryn/Git/word_peak/source/plot.hpp
 
 /home/darryn/Git/word_peak/source/taper.cpp
 taper.hpp
@@ -107,4 +123,6 @@ taper.hpp
 /home/darryn/Git/word_peak/source/taper.hpp
 plot.hpp
 /home/darryn/Git/word_peak/source/plot.hpp
+signal.hpp
+/home/darryn/Git/word_peak/source/signal.hpp
 

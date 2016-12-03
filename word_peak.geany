@@ -23,15 +23,15 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=0
-FILE_NAME_0=230;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdarryn%2FGit%2Fword_peak%2Fsource%2Fmain.cpp;0;4
-FILE_NAME_1=380;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdarryn%2FGit%2Fword_peak%2Fsource%2Frecorder.hpp;0;4
-FILE_NAME_2=569;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdarryn%2FGit%2Fword_peak%2Fsource%2Frecorder.cpp;0;4
-FILE_NAME_3=95;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdarryn%2FGit%2Fword_peak%2Fsource%2Ftaper.hpp;0;4
-FILE_NAME_4=42;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdarryn%2FGit%2Fword_peak%2Fsource%2Ftaper.cpp;0;4
-FILE_NAME_5=252;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdarryn%2FGit%2Fword_peak%2Fsource%2Fplot.hpp;0;4
-FILE_NAME_6=267;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdarryn%2FGit%2Fword_peak%2Fsource%2Fplot.cpp;0;4
-FILE_NAME_7=0;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdarryn%2FGit%2Fword_peak%2Fsource%2Fsignal_generator.cpp;0;4
+current_page=7
+FILE_NAME_0=24;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdarryn%2FGit%2Fword_peak%2Fsource%2Fmain.cpp;0;4
+FILE_NAME_1=395;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdarryn%2FGit%2Fword_peak%2Fsource%2Frecorder.hpp;0;4
+FILE_NAME_2=563;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdarryn%2FGit%2Fword_peak%2Fsource%2Frecorder.cpp;0;4
+FILE_NAME_3=808;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdarryn%2FGit%2Fword_peak%2Fsource%2Fgenerator.cpp;0;4
+FILE_NAME_4=314;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdarryn%2FGit%2Fword_peak%2Fsource%2Fgenerator.hpp;0;4
+FILE_NAME_5=0;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdarryn%2FGit%2Fword_peak%2Fsource%2Fplot.cpp;0;4
+FILE_NAME_6=1062;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdarryn%2FGit%2Fword_peak%2Fsource%2Fplot.hpp;0;4
+FILE_NAME_7=0;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdarryn%2FGit%2Fword_peak%2Fsource%2Ftransformer.cpp;0;4
 
 [VTE]
 last_dir=/home/darryn/Git/word_peak/build
