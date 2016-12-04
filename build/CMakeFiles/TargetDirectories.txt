@@ -1,3 +1,0 @@
-/home/darryn/Git/word_peak/build/CMakeFiles/edit_cache.dir
-/home/darryn/Git/word_peak/build/CMakeFiles/rebuild_cache.dir
-/home/darryn/Git/word_peak/build/CMakeFiles/word_peak.dir

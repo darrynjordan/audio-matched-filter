@@ -65,6 +65,6 @@ int main()
 void splash(void)
 {
 	system("clear");
-    printf("Word-Peak v%s\n", VERSION);
-    printf("----------------\n");
+    printf("audio-matched-filter v%s\n", VERSION);
+    printf("---------------------------\n");
 }
